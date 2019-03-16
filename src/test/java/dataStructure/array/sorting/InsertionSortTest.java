@@ -8,14 +8,11 @@ import java.util.Arrays;
 
 public class InsertionSortTest {
     @Test
-    public void test_sort()
-    {   // array with n elements ordered randomly
-        Assert.assertEquals("[10, 20, 30, 40]", Arrays.toString(InsertionSort.sort(new int[]{20,40,30,10})));
-        //array already sorted
-        Assert.assertEquals("[10, 20, 30, 40]", Arrays.toString(InsertionSort.sort(new int[]{10, 20, 30, 40})));
-        //array with single element
-        Assert.assertEquals("[10]", Arrays.toString(InsertionSort.sort(new int[]{10})));
-        //empty array
-        Assert.assertEquals("[]", Arrays.toString(InsertionSort.sort(new int[]{})));
+    public void test_sort(){
+        Assert.assertEquals("array with n elements ordered randomly","[10, 20, 30, 40]", Arrays.toString(InsertionSort.sort(new int[]{20,40,30,10})));
+        Assert.assertEquals("array already sorted","[10, 20, 30, 40]", Arrays.toString(InsertionSort.sort(new int[]{10, 20, 30, 40})));
+        Assert.assertEquals("array with single element","[10]", Arrays.toString(InsertionSort.sort(new int[]{10})));
+        Assert.assertEquals("empty array","[]", Arrays.toString(InsertionSort.sort(new int[]{})));
+        Assert.assertEquals("null array",null, InsertionSort.sort(null));
     }
 }
