@@ -16,6 +16,6 @@ This project is focused on DSA and Problem Solving in Java with Maven. Unit test
 ### Dynamic Programing 
 ### Misc 
 
-##Testing
+## Testing
 * High code quality standard is followed by applying unit test and mutation test coverage
 * Run `mvn org.pitest:pitest-maven:mutationCoverage` for mutation test coverage
