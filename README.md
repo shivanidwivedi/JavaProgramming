@@ -30,9 +30,10 @@ Stash code changes if you do not want to commit them.
 ## Code quality
 * Use `Emma` Intellij code coverage tool to run code coverage from unit tests. 
 * Make sure that 100% lines are covered.
-* Install `maven` CLI on your machine. You can use Intellij Terminal to run commands. 
+* **Install `maven` CLI on your machine**. You can use Intellij Terminal to run commands. 
 * Here is the list of maven commands: http://tutorials.jenkov.com/maven/maven-commands.html
 * `mvn surefire-report:report` command to generate unit test report. It can be viewed in `your-project/target/site/surefire-report.html`.
+* `mvn test` to run all unit tests.
 
 
 ## DS covered are:
