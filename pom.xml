@@ -17,6 +17,12 @@
             <version>4.13-beta-2</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.pitest</groupId>
+            <artifactId>pitest-maven</artifactId>
+            <version>1.4.6</version>
+        </dependency>
     </dependencies>
     <reports>
         <plugins>
@@ -48,5 +54,6 @@
 
         </plugins>
     </reports>
+
 
 </project>

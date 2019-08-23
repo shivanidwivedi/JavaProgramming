@@ -48,3 +48,7 @@ Stash code changes if you do not want to commit them.
 ### Sorting
 ### Dynamic Programing 
 ### Misc 
+
+## Testing
+* High code quality standard is followed by applying unit test and mutation test coverage
+* Run `mvn org.pitest:pitest-maven:mutationCoverage` for mutation test coverage
