@@ -33,7 +33,8 @@ Stash code changes if you do not want to commit them.
 * **Install `maven` CLI on your machine**. You can use Intellij Terminal to run commands. 
 * Here is the list of maven commands: http://tutorials.jenkov.com/maven/maven-commands.html
 * `mvn surefire-report:report` command to generate unit test report. It can be viewed in `your-project/target/site/surefire-report.html`.
-* `mvn test` to run all unit tests.
+* `mvn test` will generate jacoco test report in `JavaProgramming/target/jacoco-report/index.html`. 
+* `mvn clean verify` will verify if you meet minimum code coverage ratio configured in pom.xml.
 
 
 ## DS covered are:
