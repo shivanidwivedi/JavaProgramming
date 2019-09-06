@@ -2,17 +2,42 @@ package dataStructure.array.sorting;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+
 import java.util.Arrays;
+import java.util.Collection;
 
-// Bucket sort test cases
-
+/**
+ * Parameterize test: https://github.com/junit-team/junit4/wiki/parameterized-tests
+ */
+@RunWith(Parameterized.class)
 public class BucketSortTest {
+
+    String expectedResult;
+    int[] inputList;
+    int maxVal;
+
+    @Parameterized.Parameters
+    public static Collection<Object[]> data() {
+        return Arrays.asList(new Object[][]{
+                {new int[]{20, 40, 30, 10}, 40, "[10, 20, 30, 40]"},
+                {new int[]{10, 20, 30, 40}, 40, "[10, 20, 30, 40]"},
+                {new int[]{10}, 10, "[10]"},
+                {new int[]{}, 0, "[]"}
+        });
+    }
+
+    public BucketSortTest(int[] inputList, int maxVal, String expectedResult) {
+        this.inputList = inputList;
+        this.maxVal = maxVal;
+        this.expectedResult = expectedResult;
+    }
+
+
     @Test
-    public void test_sort(){
-        Assert.assertEquals("array with n elements ordered randomly","[10, 20, 30, 40]", Arrays.toString(BucketSort.sort(new int[]{20,40,30,10},40)));
-        Assert.assertEquals("array already sorted","[10, 20, 30, 40]", Arrays.toString(BucketSort.sort(new int[]{10, 20, 30, 40}, 40)));
-        Assert.assertEquals("array with single element","[10]", Arrays.toString(BucketSort.sort(new int[]{10}, 10)));
-        Assert.assertEquals("empty array","[]", Arrays.toString(BucketSort.sort(new int[]{}, 0)));
-        Assert.assertEquals("null array",null, BucketSort.sort(null, 0));
+    public void test_sort() {
+        Assert.assertEquals("array with n elements ordered randomly", expectedResult,
+                Arrays.toString(BucketSort.sort(inputList, maxVal)));
     }
 }
