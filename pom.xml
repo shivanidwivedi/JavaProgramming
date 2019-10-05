@@ -37,7 +37,12 @@
             <version>4.13-beta-2</version>
             <scope>test</scope>
         </dependency>
-
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.10</version>
+                <scope>provided</scope>
+            </dependency>
         <dependency>
             <groupId>org.pitest</groupId>
             <artifactId>pitest-maven</artifactId>
