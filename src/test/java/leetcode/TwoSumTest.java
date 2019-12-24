@@ -1,3 +1,5 @@
+package leetcode;
+
 import leetcode.TwoSum;
 import org.junit.Assert;
 import org.junit.Test;
