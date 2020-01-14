@@ -10,20 +10,15 @@ public class SumMinimum {
         if (arr==null||arr.length==0){
             return -1;
         }
-        int i=0;
-        int min = arr[i];
-        for(i=0; i<arr.length-1 ;i++){
+        int min = arr[0];
+        for(int i=0; i < arr.length-1 ;i++){
             min = Math.min(min, arr[i+1]);
         }
         int sum=0;
         while (min!=0){
-            sum+=min%10;
-            min=min/10;
+            sum += min % 10;
+            min = min / 10;
         }
-        if(sum%2!=0){
-            return 0;
-        }else {
-            return 1;
-        }
+        return (sum % 2 != 0) ? 0 : 1 ;
     }
 }
