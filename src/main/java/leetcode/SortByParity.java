@@ -9,18 +9,20 @@ public class SortByParity {
         if (arr.length==0||arr.length==1){
             return arr;
         }
-        int result[] = new int[arr.length];
-        int index=0;
-        for(int i = 0; i < arr.length; i++){
+        int i = 0, j = arr.length - 1;
+        while (i < j){
+            if (arr[i] % 2 > arr[j] % 2){
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
             if (arr[i] % 2 == 0){
-                result[index++] = arr[i];
+                i++;
+            }
+            if (arr[j] % 2 == 1){
+                j--;
             }
         }
-        for(int i = 0; i < arr.length; i++){
-            if (arr[i] % 2 != 0){
-                result[index++] = arr[i];
-            }
-        }
-        return result;
+        return arr;
     }
 }
