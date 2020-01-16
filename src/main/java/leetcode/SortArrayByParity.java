@@ -9,22 +9,18 @@ public class SortArrayByParity {
         if (arr == null || arr.length % 2 != 0){
             return arr;
         }
-        int result[] = new int[arr.length];
-        int index = 0;
-        for (int i=0; i < arr.length; i++){
-            if (arr[i] % 2 == 0){
-                result[index] = arr[i];
-                index += 2;
+        int temp, j=1;
+        for (int i = 0; i < arr.length; i += 2){
+            if (arr[i] % 2 == 1){
+                while (arr[j] % 2 == 1){
+                    j += 2;
+                }
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
             }
-        }
-        index = 1;
-        for (int i=0; i < arr.length; i++){
-            if (arr[i] % 2 != 0){
-                result[index] = arr[i];
-                index += 2;
-            }
-        }
 
-        return result;
+        }
+        return arr;
     }
 }
