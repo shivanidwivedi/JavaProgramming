@@ -17,8 +17,8 @@ public class LargestUniqueNumber {
             max = arr[i];
             boolean isUniqueElement = true;
             while(i > 0 && arr[i-1] == max) {
-                    i--;
-                    isUniqueElement = false;
+                i--;
+                isUniqueElement = false;
             }
             if(isUniqueElement) {
                 return max;

@@ -10,6 +10,12 @@ package leetcode;
  * Note that you cannot sell a stock before you buy one.
  */
 public class BuySellStock {
+
+    /**
+     * TimeComplexity ?
+     * @param prices
+     * @return
+     */
     public static int maxProfit(int[] prices){
         int minPrice = Integer.MAX_VALUE, maxProfit = 0;
         for(int i = 0; i < prices.length; i++) {

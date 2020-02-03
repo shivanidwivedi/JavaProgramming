@@ -15,7 +15,7 @@ public class HappyNumber {
         if (number==0){
             return false;
         }
-        HashSet<Integer> set = new HashSet<>();
+        HashSet<Integer> set = new HashSet<Integer>();
         while (number!=1 && !set.contains(number)){
             set.add(number);
             number = getNext(number);

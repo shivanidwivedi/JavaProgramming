@@ -60,10 +60,10 @@ public class CommonCharacters {
     }
 
     static int[] wordToAscii(String word) {
-        int[] arr = new int[26];
+        int[] occurrence = new int[26];
         for(int i = 0; i < word.length(); i++) {
-            arr[word.charAt(i)-97]++;
+            occurrence[word.charAt(i)-97]++;
         }
-        return arr;
+        return occurrence;
     }
 }
