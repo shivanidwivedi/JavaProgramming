@@ -4,6 +4,7 @@ package leetcode.Strings;
  * @author shivanidwivedi on 11/02/20
  * @project JavaProgramming
  * Given a string S, return the number of substrings that have only one distinct letter.
+ * LC-1180
  */
 public class CountSubstrings {
     public static int countLetters(String S) {
