@@ -1,14 +1,19 @@
 package leetcode.Trees;
 
+import lombok.Data;
+
 /**
  * @author shivanidwivedi on 09/02/20
  * @project JavaProgramming
  */
+@Data
 public class TreeNode {
+    TreeNode right;
     int value;
     TreeNode left;
-    TreeNode right;
-    TreeNode(int x){
+    public TreeNode(int x){
         value = x;
     }
+
+
 }
