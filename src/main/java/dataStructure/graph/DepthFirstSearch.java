@@ -1,4 +1,4 @@
-package leetcode.graph;
+package dataStructure.graph;
 
 
 import java.util.Iterator;
