@@ -24,40 +24,39 @@ package leetcode;
  * @project JavaProgramming
  */
 public class NumberOfIslands {
-    class Solution {
-        void dfs(char[][] grid, int r, int c) {
-            int nr = grid.length;
-            int nc = grid[0].length;
+    static void dfs(char[][] grid, int row, int col) {
+        int rowlength = grid.length;
+        int collength = grid[0].length;
 
-            if (r < 0 || c < 0 || r >= nr || c >= nc || grid[r][c] == '0') {
-                return;
-            }
-
-            grid[r][c] = '0';
-            dfs(grid, r - 1, c);
-            dfs(grid, r + 1, c);
-            dfs(grid, r, c - 1);
-            dfs(grid, r, c + 1);
+        if (row < 0 || col < 0 || row >= rowlength ||
+                col >= collength || grid[row][col] == '0') {
+            return;
         }
 
-        public int numIslands(char[][] grid) {
-            if (grid == null || grid.length == 0) {
-                return 0;
-            }
+        grid[row][col] = '0';
+        dfs(grid, row - 1, col);
+        dfs(grid, row + 1, col);
+        dfs(grid, row, col - 1);
+        dfs(grid, row, col + 1);
+    }
 
-            int nr = grid.length;
-            int nc = grid[0].length;
-            int num_islands = 0;
-            for (int r = 0; r < nr; ++r) {
-                for (int c = 0; c < nc; ++c) {
-                    if (grid[r][c] == '1') {
-                        ++num_islands;
-                        dfs(grid, r, c);
-                    }
+    public static int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+
+        int rowlength = grid.length;
+        int collength = grid[0].length;
+        int num_islands = 0;
+        for (int row = 0; row < rowlength; ++row) {
+            for (int col = 0; col < collength; ++col) {
+                if (grid[row][col] == '1') {
+                    ++num_islands;
+                    dfs(grid, row, col);
                 }
             }
-
-            return num_islands;
         }
+
+        return num_islands;
     }
 }
