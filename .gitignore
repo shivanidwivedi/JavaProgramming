@@ -1,4 +1,3 @@
-
 .gitignore
 .idea/.gitignore
 .idea/codeStyles/
@@ -9,4 +8,5 @@
 .idea/modules.xml
 .idea/vcs.xml
 .idea/xtextAutoBuilderState.xml
+.idea/
 target/
