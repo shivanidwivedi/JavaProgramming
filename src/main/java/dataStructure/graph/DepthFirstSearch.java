@@ -17,13 +17,13 @@ public class DepthFirstSearch {
         this.graph = graph;
     }
     public void dfsRecursive(int v){
-        boolean visited[] = new boolean[this.graph.numberOfVertices];
+        boolean visited[] = new boolean[graph.numberOfVertices];
         DFSUtil(v,visited);
     }
     public void DFSUtil(int v, boolean visited[]){
         visited[v] = true;
         System.out.println(v+" ");
-        Iterator<Integer> i = this.graph.getAdjacentNodes(v).iterator();
+        Iterator<Integer> i = graph.getAdjacentNodes(v).iterator();
         while (i.hasNext()){
             int n = i.next();
             if(!visited[n]){
