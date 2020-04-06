@@ -49,11 +49,12 @@ public class GroupAnagram {
             char[] ca = s.toCharArray();
             Arrays.sort(ca);
             String key = String.valueOf(ca);
-            if (!map.containsKey(key)){
+            if (!map.containsKey(key)) {
                 map.put(key, new ArrayList());
             }
             map.get(key).add(s);
         }
+        return map;
     }
 }
 
