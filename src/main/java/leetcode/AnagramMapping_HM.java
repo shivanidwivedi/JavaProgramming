@@ -15,7 +15,7 @@ public class AnagramMapping_HM {
     }
 
     private static HashMap<Integer,Integer> createHashMap(int [] arr2){
-        HashMap<Integer,Integer> map = new HashMap<>();
+        HashMap<Integer,Integer> map = new HashMap();
         for(int i= 0; i<arr2.length; i++){
             map.put(arr2[i],i);
         }
