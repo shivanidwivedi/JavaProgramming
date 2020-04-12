@@ -47,8 +47,22 @@ package leetcode;
  */
 public class CompareVersionNumbers {
     public static int compareVersion(String version1, String version2) {
-        String[] arr1 = version1.split("\\.");
-        String[] arr2 = version2.split("\\.");
+        Version v1 = new Version(version1);
+        Version v2 = new Version(version2);
+        return v1.compareTo(v2);
+    }
+}
+
+class Version implements Comparable<Version>{
+    String version;
+    public Version(String ver){
+        this.version = ver;
+    }
+
+    @Override
+    public int compareTo(Version version1) {
+        String[] arr1 = version.split("\\.");
+        String[] arr2 = version1.version.split("\\.");
         int i1, i2;
         for (int i = 0; i < Math.max(arr1.length,arr2.length); i++){
             i1 = i < arr1.length ? Integer.parseInt(arr1[i]) : 0;

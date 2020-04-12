@@ -18,4 +18,11 @@ public class CompareVersionNumbersTest {
         Assert.assertEquals(0, CompareVersionNumbers.compareVersion("1.01","1.001"));
         Assert.assertEquals(0, CompareVersionNumbers.compareVersion("1.0","1.0.0"));
     }
+
+    @Test
+    public void equals() {
+        Version v1 = new Version("1.0");
+        Version v2 = new Version("1.0");
+        Assert.assertEquals(0, v1.compareTo(v2));
+    }
 }
