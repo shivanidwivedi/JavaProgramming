@@ -29,6 +29,7 @@ public class TreeTraversalInorder {
         addNode(list,root.right);
     }
 
+
 //Iterative Solution
     public List<Integer> inorderTraversalIterative(TreeNode root){
         List <Integer> output = new ArrayList<>();
