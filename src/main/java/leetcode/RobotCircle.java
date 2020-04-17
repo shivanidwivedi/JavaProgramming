@@ -59,6 +59,30 @@ public class RobotCircle {
         }
         return false;
     }
+    /**
+     * Method-3: Switch case(faster solution)
+     */
+    public boolean judgeCircleSwitch(String moves) {
+        int vert = 0;
+        int hori = 0;
+        for(char c : moves.toCharArray()){
+            switch(c){
+                case 'U':
+                    vert++;
+                    break;
+                case 'D':
+                    vert--;
+                    break;
+                case 'L':
+                    hori--;
+                    break;
+                case 'R':
+                    hori++;
+                    break;
+            }
+        }
+        return vert == 0 && hori == 0;
+    }
 }
 
 
