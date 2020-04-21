@@ -7,13 +7,13 @@ import lombok.Data;
  * @project JavaProgramming
  */
 @Data
-public class TreeNode {
-    TreeNode right;
-    int value;
-    TreeNode left;
-    public TreeNode(int x){
+class Node {
+    public int value;
+    Node right;
+    int val;
+    Node left;
+    public Node(int x){
         value = x;
     }
-
 
 }
