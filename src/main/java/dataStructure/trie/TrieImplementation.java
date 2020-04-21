@@ -1,7 +1,5 @@
 package dataStructure.trie;
 
-import leetcode.Trees.TreeNode;
-
 /**
  * @author shivanidwivedi on 06/04/20
  * @project JavaProgramming
