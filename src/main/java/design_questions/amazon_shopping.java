@@ -2,6 +2,7 @@ package design_questions;
 
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
@@ -32,7 +33,7 @@ class Address{
 }
 
 //Account, Customer, Admin, and Guest:
-
+/*
 class Account{
     private String userName;
     private String password;
@@ -135,7 +136,9 @@ class Notification{
     private String content;
     private Date notificationDate;
 
-    public boolean sendNotification(Account account);
+    public boolean sendNotification(Account account){
+        return false;
+    }
 }
 interface search{
     public List<Product> searchProductByName(String name);
@@ -153,3 +156,5 @@ class Catalog implements search{
         return productNames.get(category);
     }
 }
+*/
+
