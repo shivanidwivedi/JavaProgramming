@@ -1,3 +1,8 @@
+package leetcode;
+
+import org.junit.Assert;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -6,4 +11,15 @@ import static org.junit.Assert.*;
  */
 public class IslandPerimeterTest {
 
+    @Test
+    public void islandPerimeter() {
+        Assert.assertEquals(16,IslandPerimeter.islandPerimeter(
+                new int[][]{
+                        {0,1,0,0},
+                        {1,1,1,0},
+                        {0,1,0,0},
+                        {1,1,0,0}
+                }
+        ));
+    }
 }
