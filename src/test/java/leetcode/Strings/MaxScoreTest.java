@@ -1,3 +1,8 @@
+package leetcode.Strings;
+
+import org.junit.Assert;
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 /**
@@ -6,4 +11,11 @@ import static org.junit.Assert.*;
  */
 public class MaxScoreTest {
 
+    @Test
+    public void maxScore() {
+        Assert.assertEquals(5, MaxScore.maxScore("011101"));
+        Assert.assertEquals(5, MaxScore.maxScore("00111"));
+        Assert.assertEquals(3, MaxScore.maxScore("1111"));
+
+    }
 }
