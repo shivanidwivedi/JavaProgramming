@@ -1,5 +1,7 @@
 package restful;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.Data;
 import lombok.Getter;
 
 /**
@@ -23,7 +25,8 @@ import lombok.Getter;
  * and accessors for the id and content data, as the following listing (from src/main/java/com/example/restservice/Greeting.java) shows:
  * @project JavaProgramming
  */
-@Getter
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Data
 public class Greeting {
 
     private final long id;
