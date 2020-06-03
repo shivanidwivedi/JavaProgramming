@@ -54,3 +54,14 @@ Stash code changes if you do not want to commit them.
 ## Testing
 * High code quality standard is followed by applying unit test and mutation test coverage
 * Run `mvn org.pitest:pitest-maven:mutationCoverage` for mutation test coverage
+
+---
+
+# Restful webservice
+
+##Useful unix commands
+```shell script
+lsof -i:8080 # get running process on 8080
+ps aux | grep "8080" # grep process detail by process id, you can also use name or any other text
+kill -9 <pid> # kill process by PID 
+```
