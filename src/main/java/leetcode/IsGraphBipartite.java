@@ -35,34 +35,28 @@ import java.util.Stack;
  * |  \ |
  * 3----2
  * We cannot find a way to divide the set of nodes into two independent subsets.
- *
- * Time Complexity: O(N+E), where N is the number of nodes in the graph, and E is the number of edges.
- * We explore each node once when we transform it from uncolored to colored, traversing all its edges in the process.
- *
- * Space Complexity: O(N), the space used to store the color.
  */
 
-//Approach : Graph coloring using DFS
-
+//Approach :
 public class IsGraphBipartite {
     public boolean isBipartite(int[][] graph) {
         int n = graph.length;
         int[] color = new int[n];
-        //initially all graph are uncolored, so all entries are -1.
         Arrays.fill(color,-1);
 
         for(int start = 0; start < n; start++){
             Stack<Integer> stack = new Stack<>();
             stack.push(start);
-            color[start] = 0; // 0 represents some color
+            color[start] = 0;
             while (!stack.isEmpty()){
                 Integer node = stack.pop();
                 if (color[node] == -1){
+
                     for (int adj : graph[node]){
                         if (color[adj] == -1){
                             stack.push(adj);
-                            color[adj] = color[node] ^ 1; // color all the adjacent nodes with different color
-                        }else if (color[adj] == color[node]){ // if adj nodes color is same, return false.
+                            color[adj] = color[node] ^ 1;
+                        }else if (color[adj] == color[node]){
                             return false;
                         }
                     }
