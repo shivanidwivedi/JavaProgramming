@@ -42,4 +42,21 @@ public class Search2DMatrix {
             }
         return false;
     }
+
+    public boolean searchMatrixBinary(int[][] matrix, int target) {
+        if(matrix == null || matrix.length == 0) return false;
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int row = 0, col = n-1;
+        while(col >= 0 && row < m){
+            if(matrix[row][col] == target){
+                return true;
+            }else if(matrix[row][col] > target){
+                col--;
+            }else{
+                row++;
+            }
+        }
+        return false;
+    }
 }
