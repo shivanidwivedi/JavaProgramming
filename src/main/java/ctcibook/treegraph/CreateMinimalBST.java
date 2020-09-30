@@ -9,7 +9,7 @@ package ctcibook.treegraph;
  */
 public class CreateMinimalBST {
     public BinaryTreeNode createBST(int[] array){
-        createBSTHelper(array, 0, array.length-1);
+        return createBSTHelper(array, 0, array.length-1);
     }
     private BinaryTreeNode createBSTHelper(int[] array, int start, int end){
         if(end > start){
