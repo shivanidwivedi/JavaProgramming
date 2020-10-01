@@ -8,7 +8,7 @@ package ctcibook.treegraph;
  * a binary search tree. You may assume that each node has a link to its parent.
  */
 public class InorderSuccessorBST {
-    public BinaryTreeNode inorderSuccessor(BinaryTreeNode node) {
+    /*public BinaryTreeNode inorderSuccessor(BinaryTreeNode node) {
         if(node.right != null){
             node = node.right;
             while(node.left != null){
@@ -20,5 +20,5 @@ public class InorderSuccessorBST {
             node = node.parent;
         }
         return node.parent;
-    }
+    }*/
 }
