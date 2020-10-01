@@ -60,6 +60,7 @@ class BinaryTreeNode{
     int val;
     BinaryTreeNode left;
     BinaryTreeNode right;
+    BinaryTreeNode parent;
     BinaryTreeNode(int val){
         this.val = val;
     }

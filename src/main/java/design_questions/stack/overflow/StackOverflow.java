@@ -5,4 +5,8 @@ package design_questions.stack.overflow;
  * @project JavaProgramming
  */
 public class StackOverflow {
+    public static void main(String[] s){
+        //Question question = new Question();
+        return;
+    }
 }

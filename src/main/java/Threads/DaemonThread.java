@@ -15,6 +15,6 @@ public class DaemonThread extends Thread{
         DaemonThread daemonThread = new DaemonThread();
         daemonThread.setDaemon(true); // successfully executed
         daemonThread.start();
-        daemonThread.setDaemon(true); // throws IllegalThreadStateException, should mark it before start method
+      //  daemonThread.setDaemon(true); // throws IllegalThreadStateException, should mark it before start method
     }
 }

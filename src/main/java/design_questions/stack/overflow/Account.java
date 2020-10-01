@@ -5,4 +5,9 @@ package design_questions.stack.overflow;
  * @project JavaProgramming
  */
 public class Account {
+    private int id;
+    private String password;
+    private String name;
+    private String emailId;
+    private int phone;
 }

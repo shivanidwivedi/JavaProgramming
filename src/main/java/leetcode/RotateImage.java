@@ -51,7 +51,7 @@ package leetcode;
  * Space complexity : O(1) since we do a rotation in place.
  */
 public class RotateImage {
-    public static int[][] rotate(int[][] matrix) {
+    public static void rotate(int[][] matrix) {
         int n = matrix.length;
         for (int i = 0; i < n; i++){
             for (int j = i; j < n; j++){
@@ -67,6 +67,5 @@ public class RotateImage {
                 matrix[i][n - j - 1] = tmp;
             }
         }
-        return matrix;
     }
 }

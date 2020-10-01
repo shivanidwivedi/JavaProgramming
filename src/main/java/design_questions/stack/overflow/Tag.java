@@ -5,4 +5,8 @@ package design_questions.stack.overflow;
  * @project JavaProgramming
  */
 public class Tag {
+    private String name;
+    private String description;
+    private int dailyAskedCount;
+    private int weeklyAskedCount;
 }
