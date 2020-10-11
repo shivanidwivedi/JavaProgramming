@@ -12,7 +12,7 @@ import java.util.Map;
  * @author shivanidwivedi on 01/10/20
  * @project JavaProgramming
  */
-public class Handler implements RequestHandler<Map<String,String>, String>{
+public class HelloHandler implements RequestHandler<Map<String,String>, String>{
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     @Override
     public String handleRequest(Map<String,String> event, Context context)
