@@ -1,8 +1,8 @@
-package design_questions;
+package leetcode;
 
 /**
  * @author shivanidwivedi on 11/10/20
  * @project JavaProgramming
  */
-public class PackageDependency {
+public class BSTCircularDLLConversion {
 }
