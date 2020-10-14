@@ -16,7 +16,7 @@ public class Game {
 
     private Board board;
     private Queue<Player> players;
-    private Logs logs;
+    private GameLogs gameLogs;
     private boolean isGameOver;
     private Move previousMove;
 
@@ -27,7 +27,7 @@ public class Game {
         players.add(p2);
         p1.setGame(this);
         p2.setGame(this);
-        this.logs = new Logs();
+        this.gameLogs = new GameLogs();
     }
 
     private Game() { //cannot create a game without players
@@ -56,12 +56,12 @@ public class Game {
             Move currentMove = new Move(position, player);
             previousMove = currentMove;
             board.update(currentMove);
-            logs.addMove(currentMove);
+            gameLogs.addMove(currentMove);
             log.info(String.format("Player %s moved to %s", player.getType().toString(), position.toString()));
             if (board.isWinner(currentMove)) {
                 isGameOver = true;
                 log.info(String.format("Player %s has won", player.getType().toString()));
-                logs.printLogs();
+                gameLogs.printLogs();
                 return player;
             }
         } catch (Exception e) {

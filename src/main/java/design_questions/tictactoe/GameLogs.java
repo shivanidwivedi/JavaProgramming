@@ -11,10 +11,10 @@ import java.util.List;
  * @project JavaProgramming
  */
 @Slf4j
-public class Logs {
+public class GameLogs {
     private List<Move> logs;
 
-    public Logs(){
+    public GameLogs(){
         logs = new ArrayList<>();
     }
 
