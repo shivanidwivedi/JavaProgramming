@@ -1,5 +1,6 @@
 package design_questions.online.book.reader;
 
+import com.google.inject.Inject;
 import lombok.Data;
 
 /**

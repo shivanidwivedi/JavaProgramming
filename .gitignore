@@ -1,4 +1,3 @@
-.gitignore
 .idea/.gitignore
 .idea/codeStyles/
 .idea/compiler.xml
@@ -10,4 +9,5 @@
 .idea/xtextAutoBuilderState.xml
 .idea/
 target/
+*.iml
 ShivaniProgramming.iml

@@ -43,6 +43,24 @@
             <version>4.2.3</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.google.inject.extensions/guice-assistedinject -->
+        <!-- https://mvnrepository.com/artifact/com.google.inject.extensions/guice-assistedinject -->
+        <dependency>
+            <groupId>com.google.inject.extensions</groupId>
+            <artifactId>guice-assistedinject</artifactId>
+            <version>4.2.3</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/com.google.auto.factory/auto-factory -->
+        <dependency>
+            <groupId>com.google.auto.factory</groupId>
+            <artifactId>auto-factory</artifactId>
+            <version>1.0-beta8</version>
+        </dependency>
+
+
+
 
         <!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
         <dependency>

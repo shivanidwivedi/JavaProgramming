@@ -1,6 +1,7 @@
 package design_questions.online.book.reader;
 
-import com.google.inject.Module;
+import com.google.inject.Inject;
+import com.google.inject.Singleton;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
@@ -11,9 +12,11 @@ import java.util.*;
  */
 
 @Slf4j
+@Singleton
 public class Library {
     private HashMap<String, List<Book>> books = new HashMap<>();
 
+    @Inject
     public Library(String[] books) {
         initializeInventory(books);
     }
@@ -24,9 +27,9 @@ public class Library {
 
     public Optional<Book> find(String title) {
         Optional<Book> myBook = Optional.empty();
-        if(books.containsKey(title)) {
-            for(Book book : books.get(title)) {
-                if(book.isAvailable()) {
+        if (books.containsKey(title)) {
+            for (Book book : books.get(title)) {
+                if (book.isAvailable()) {
                     myBook = Optional.of(book);
                     log.info(String.format("Found the book %s", title));
                     break;
@@ -61,9 +64,9 @@ public class Library {
         log.error(String.format("Unable to delete book %s", name));
     }
 
-    public int size(){
+    public int size() {
         int sum = 0;
-        for(List<Book> books : books.values()) {
+        for (List<Book> books : books.values()) {
             sum += books.size();
         }
         return sum;

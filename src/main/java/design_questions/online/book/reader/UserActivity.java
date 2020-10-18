@@ -1,5 +1,8 @@
 package design_questions.online.book.reader;
 
+import com.google.inject.Inject;
+import com.google.inject.assistedinject.Assisted;
+import com.google.inject.name.Named;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Optional;
@@ -14,10 +17,12 @@ public class UserActivity {
     private Progress progress; //user book history
     private Library library;
 
-    public UserActivity(Profile profile, Library library) {
+    @Inject
+    public UserActivity(@Named("library") Library library,
+                        @Assisted Profile profile) {
         this.profile = profile;
-        this.library = library;
         progress = new Progress(profile);
+        this.library = library;
 
     }
 
