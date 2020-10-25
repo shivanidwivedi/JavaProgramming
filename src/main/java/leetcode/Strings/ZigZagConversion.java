@@ -1,5 +1,8 @@
 package leetcode.Strings;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author shivanidwivedi on 07/06/20
  * @project JavaProgramming
@@ -32,6 +35,35 @@ package leetcode.Strings;
  * Space Complexity: O(n). For the cpp implementation, O(1) if return string is not considered extra space.
  */
 public class ZigZagConversion {
+
+    public String convertRows(String s, int numRows) {
+        if(numRows == 1){
+            return s;
+        }
+        List<StringBuilder> rows = new ArrayList<>();
+        for(int i = 0; i < Math.min(numRows, s.length()); i++){
+            rows.add(new StringBuilder());
+        }
+
+        int currentRow = 0;
+        boolean goingDown = false;
+
+        for(char ch : s.toCharArray()){
+            rows.get(currentRow).append(ch);
+            if(currentRow == 0 || currentRow == numRows - 1){
+                goingDown = !goingDown;
+            }
+            currentRow += goingDown ? 1 : -1;
+        }
+
+        StringBuilder result = new StringBuilder();
+        for(StringBuilder row : rows){
+            result.append(row);
+        }
+        return result.toString();
+    }
+
+
     public String convert(String s, int numRows) {
         if(numRows == 1) return s;
         StringBuilder sb = new StringBuilder();
@@ -46,7 +78,14 @@ public class ZigZagConversion {
                 }
             }
         }
-        System.out.println(sb.toString());
         return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        ZigZagConversion zigZagConversion = new ZigZagConversion();
+        System.out.println(zigZagConversion.convert("PAYPALISHIRING", 3));
+        System.out.println(zigZagConversion.convert("PAYPALISHIRING", 4));
+        System.out.println(zigZagConversion.convertRows("PAYPALISHIRING", 3));
+        System.out.println(zigZagConversion.convertRows("PAYPALISHIRING", 4));
     }
 }
