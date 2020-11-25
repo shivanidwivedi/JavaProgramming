@@ -25,7 +25,7 @@ public class BookReaderMain {
         //UserActivity factory with Guice
         UserActivityFactory factory = injector.getInstance(UserActivityFactory.class);
         UserActivity shivani = factory.create(new Profile(1, "Shivani"));
-        UserActivity gagan = factory.create(new Profile(1, "Gagan"));
+        UserActivity gagan = factory.create(new Profile(2, "Gagan"));
 
         //Execution
         Optional<Book> myBook = shivani.find(LibraryModule.FAIL_OR_LEARN);

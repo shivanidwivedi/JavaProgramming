@@ -42,36 +42,36 @@ public class Game {
 
 
     public Player move(int x, int y, Player player) {
+        if (previousMove != null && previousMove.getPlayer().equals(player)) {
+            throw new IllegalStateException(String.format("Illegal Move: Player %s us not allowed to move", player.getType().toString()));
+        }
+        if (isGameOver) {
+            throw new IllegalStateException(String.format("Game is over, please start a new game !"));
+        }
+        if (board.isOccupied(x, y)) {
+            throw new IllegalStateException(String.format("Illegal Move: Position (%d,%d) is already occupied!", x, y));
+        }
+        Position position = new Position(x, y);
+        Move currentMove = null;
         try {
-            if(previousMove != null && previousMove.getPlayer().equals(player)) {
-                throw new IllegalStateException(String.format("Illegal Move: Player %s us not allowed to move", player.getType().toString()));
-            }
-            if(isGameOver) {
-                throw new IllegalStateException(String.format("Game is over, please start a new game !"));
-            }
-            if(board.isOccupied(x,y)) {
-                throw new IllegalStateException(String.format("Illegal Move: Position (%d,%d) is already occupied!",x,y));
-            }
-            Position position = new Position(x, y);
-            Move currentMove = new Move(position, player);
-            previousMove = currentMove;
-            board.update(currentMove);
-            gameLogs.addMove(currentMove);
-            log.info(String.format("Player %s moved to %s", player.getType().toString(), position.toString()));
-            if (board.isWinner(currentMove)) {
-                isGameOver = true;
-                log.info(String.format("Player %s has won", player.getType().toString()));
-                gameLogs.printLogs();
-                return player;
-            }
+            currentMove = new Move(position, player);
         } catch (Exception e) {
-            e.printStackTrace();
+
+        }
+        previousMove = currentMove;
+        board.update(currentMove);
+        gameLogs.addMove(currentMove);
+        log.info(String.format("Player %s moved to %s", player.getType().toString(), position.toString()));
+        if (board.isWinner(currentMove)) {
+            isGameOver = true;
+            log.info(String.format("Player %s has won", player.getType().toString()));
+            gameLogs.printLogs();
+            return player;
         }
 
 
         return null;
     }
-
 
 
 }

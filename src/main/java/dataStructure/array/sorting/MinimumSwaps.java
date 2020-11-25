@@ -5,4 +5,8 @@ package dataStructure.array.sorting;
  * @project JavaProgramming
  */
 public class MinimumSwaps {
+    public int minSwaps(int[] arr){
+        int count = 0;
+        return count;
+    }
 }

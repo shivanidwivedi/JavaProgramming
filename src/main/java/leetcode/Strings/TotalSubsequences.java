@@ -1,5 +1,6 @@
 package leetcode.Strings;
 
+import com.google.inject.internal.cglib.core.$ObjectSwitchCallback;
 import org.junit.Assert;
 
 import java.util.LinkedHashSet;
@@ -28,26 +29,13 @@ public class TotalSubsequences {
     }
 
     private boolean isSubSequence(String line, String word) {
-        int lastMatchedIndex = -1;
-        boolean matchFound = false;
-            for (int j = 0; j < word.length(); j++) {
-                char wordChar = word.charAt(j);
-                for(int i = 0; i < line.length(); i++) {
-                    char lineChar = line.charAt(i);
-                    if(wordChar == lineChar) {
-                        if (i > lastMatchedIndex) {
-                            lastMatchedIndex = i;
-                            matchFound = true;
-                            break;
-                        }
-                    }
+        int wordIndex = 0;
+            for (int lineIndex = 0; wordIndex < word.length() && lineIndex < line.length(); lineIndex++) {
+                if(line.charAt(lineIndex) == word.charAt(wordIndex)) {
+                    wordIndex++;
                 }
-                if(!matchFound) {
-                    return false;
-                }
-                matchFound = false; //reset
             }
-        return true;
+        return  wordIndex == word.length();
     }
 
     public static void main(String[] args) {
