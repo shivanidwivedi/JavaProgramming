@@ -1,5 +1,7 @@
 package leetcode.Trees;
 
+import org.junit.Assert;
+
 /**
  * @author shivanidwivedi on 07/04/20
  * @project JavaProgramming
@@ -21,19 +23,29 @@ package leetcode.Trees;
 //Time Complexity: O(N). We visit every node once.
 //Space Complexity: O(N), the size of our implicit call stack during our depth-first search.
 
-public class DiameterBinaryTree {
-    int result = 0;
+public class TreeDiameter {
+    int diameter;
+    TreeNode root;
     public int diameterOfBinaryTree(TreeNode root) {
-        result = 1;
         depth(root);
-        return result - 1;
+        return diameter;
     }
-    int depth(TreeNode root){
-        TreeNode node = root;
-        if (node == null) return 0;
-        int ldepth = depth(node.left);
-        int rdepth = depth(node.right);
-        result = Math.max(result, ldepth+rdepth+1);
-        return Math.max(ldepth,rdepth) + 1;
+
+    public int depth(TreeNode node){
+        if(node == null) return 0;
+        int left = depth(node.left);
+        int right = depth(node.right);
+        diameter = Math.max(diameter, left + right);
+        return Math.max(left, right) + 1;
+    }
+
+    public static void main(String[] args) {
+        TreeDiameter tree = new TreeDiameter();
+        tree.root = new TreeNode(1);
+        tree.root.left = new TreeNode(2);
+        tree.root.right = new TreeNode(3);
+        tree.root.left.left = new TreeNode(4);
+        tree.root.left.right = new TreeNode(5);
+        Assert.assertEquals(3, tree.diameterOfBinaryTree(tree.root));
     }
 }
