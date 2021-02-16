@@ -5,6 +5,21 @@ import org.junit.Assert;
 /**
  * @author shivanidwivedi on 16/02/21
  * @project JavaProgramming
+ *
+ * Input: {1, 2, 3, 7}, S=6
+ * Output: True
+ * The given set has a subset whose sum is '6': {1, 2, 3}
+ *
+ * Input: {1, 2, 7, 1, 5}, S=10
+ * Output: True
+ * The given set has a subset whose sum is '10': {1, 2, 7}
+ *
+ * Input: {1, 3, 4, 8}, S=6
+ * Output: False
+ * The given set does not have any subset whose sum is equal to '6'.
+ *
+ *  * The solution has time and space complexity of O(N*S),
+ *  * where ‘N’ represents total numbers and ‘S’ is the required sum.
  */
 public class SubsetSum {
     //Bottom up approach
