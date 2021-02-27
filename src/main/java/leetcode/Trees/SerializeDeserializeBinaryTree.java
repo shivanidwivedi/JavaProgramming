@@ -1,5 +1,7 @@
 package leetcode.Trees;
 
+import org.junit.Assert;
+
 /**
  * @author shivanidwivedi on 24/08/20
  * @project JavaProgramming
@@ -24,6 +26,7 @@ package leetcode.Trees;
  */
 public class SerializeDeserializeBinaryTree {
     int index;
+    TreeNode root;
 
     public String serialize(TreeNode root) {
         if(root == null) {
@@ -55,5 +58,17 @@ public class SerializeDeserializeBinaryTree {
         root.left = helper(s);
         root.right = helper(s);
         return root;
+    }
+
+    public static void main(String[] args) {
+        SerializeDeserializeBinaryTree tree = new SerializeDeserializeBinaryTree();
+        tree.root = new TreeNode(1);
+        tree.root.left = new TreeNode(2);
+        tree.root.right = new TreeNode(3);
+        tree.root.left.left = new TreeNode(4);
+        tree.root.left.right = new TreeNode(5);
+        String s = "1,2,4,#,#,5,#,#,3,#,#";
+        Assert.assertEquals(s, tree.serialize(tree.root));
+        //Assert.assertEquals(tree.deserialize(tree.serialize(root)));
     }
 }
