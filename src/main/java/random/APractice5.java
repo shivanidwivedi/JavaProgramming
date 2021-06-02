@@ -1,6 +1,7 @@
 package random;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -9,33 +10,39 @@ import java.util.List;
  */
 public class APractice5 {
     public List<Integer> countSmaller(int[] nums) {
-        int[] res = new int[nums.length];
-        List<Integer> list = new ArrayList<>();
-        for(int i = nums.length - 1; i >= 0; i--) {
-            res[i] = insert(list, nums[i]);
+        List<Integer> tempList = new ArrayList<>();
+        LinkedList<Integer> finalRes = new LinkedList<>();
+        int[] result = new int[nums.length];
+
+        for(int i=nums.length-1; i>=0; i--) {
+            // find the position at which the nums[i] can be placed which will be our result value.
+            result[i] = insert(tempList, nums[i]);
+            // as soon as we find the position where the nums[i] would go we insert same in our final
+            // result list and using LinkedList to append values at the head as we go.
+            finalRes.addFirst(result[i]);
         }
-        list.clear();
-        for(int i = 0 ; i < nums.length; i++) {
-            list.add(res[i]);
-        }
-        return list;
+
+        return finalRes;
     }
 
-    // binary insert
-    private int insert(List<Integer> list, int num) {
-        int l = 0;
-        int r = list.size() - 1;
-        while(l <= r) {
-            int mid = l + (r - l)/2;
-            int M = list.get(mid);
-            if(M >= num) {
-                r = mid - 1;
-            }else if(M < num) {
-                l = mid + 1;
+    int insert(List<Integer> tempList, int num) {
+        int left = 0;
+        int right = tempList.size()-1;
+
+        while(left <= right) {
+            // find best index to insert "num" and add to list and return index value
+            int mid = left + (right-left) /2;
+            int midVal = tempList.get(mid);
+
+            if(num <= midVal) {
+                right = mid-1;
+            } else {
+                left = mid + 1;
             }
         }
-        list.add(l, num);
-        return l;
+
+        tempList.add(left, num);
+        return left;
     }
 
     public static void main(String[] args) {
